@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import logo from "@/assets/kite-logo.png";
+
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,10 +18,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-extrabold tracking-tight">
-            <span className="text-foreground">INTE</span>
-            <span className="text-gradient-brand">RVAL</span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="logo"
+            width={90}
+            height={90}
+            style={{ objectFit: "contain" }}
+          />
+          <span className="text-2xl font-extrabold tracking-tight flex items-center">
+            <span className="text-foreground">KITE</span>
+            <span className="text-gradient-brand ml-1">LEARNING</span>
           </span>
         </Link>
 

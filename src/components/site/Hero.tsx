@@ -1,17 +1,46 @@
 import heroImg from "@/assets/hero-doctor-kid.jpg";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight, PlayCircle, ScissorsLineDashed } from "lucide-react";
+import { useEffect, useState } from "react";
+import doctorImg from "@/assets/docter.png";
+import policeImg from "@/assets/police.png";
+import artistImg from "@/assets/artist.png";
+import chefImg from "@/assets/chef.png";
+import scientistImg from "@/assets/scientist.png";
+import architectImg from "@/assets/architect.png";
+import lawyerImg from "@/assets/lawyer.png";
+
+const rolesData = [
+  { name: "Doctor", img: doctorImg },
+  { name: "Police", img: policeImg },
+  { name: "Artist", img: artistImg },
+  { name: "Chef", img: chefImg },
+  { name: "Scientist", img: scientistImg },
+  { name: "Architect", img: architectImg },
+  { name: "Lawyer", img: lawyerImg },
+];
 
 export function Hero() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % rolesData.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="bg-gradient-hero relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-primary shadow-card">
-            ⭐ Personalized Online Learning
-          </span>
-          <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
+          <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.05] tracking-tight">
             Helping your child <br />
-            become a future <span className="text-gradient-brand">Doctor.</span>
+            become a future{" "}
+            <span className="text-gradient-brand">
+              {rolesData[index].name}
+            </span>
+            <span>.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-xl">
             Presenting to you the best online learning platform your child will
@@ -32,23 +61,15 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-6 text-sm text-muted-foreground">
-            <div><span className="block text-2xl font-bold text-foreground">50K+</span>Learners</div>
-            <div className="h-10 w-px bg-border" />
-            <div><span className="block text-2xl font-bold text-foreground">10+</span>Years</div>
-            <div className="h-10 w-px bg-border" />
-            <div><span className="block text-2xl font-bold text-foreground">30+</span>Countries</div>
-          </div>
+   
         </div>
 
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-brand opacity-10 blur-3xl rounded-full" />
           <img
-            src={heroImg}
-            alt="Young student dressed as a doctor sitting on a cloud — symbolising aspirational learning at Interval"
-            width={1024}
-            height={1024}
-            className="relative w-full max-w-lg mx-auto animate-float drop-shadow-2xl"
+            src={rolesData[index].img}
+            alt={rolesData[index].name}
+            className="relative w-full max-w-lg mx-auto animate-float drop-shadow-2xl transition-all duration-500"
           />
         </div>
       </div>

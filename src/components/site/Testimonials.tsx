@@ -1,41 +1,123 @@
+import { useEffect, useState } from "react";
 import { Quote } from "lucide-react";
+import scientistImg from "@/assets/scientist.png";
+
 
 const data = [
-  { quote: "Interval is the best online platform for kids. Kanmani has improved so much. Thank you Aysha mam!", name: "Muktha & Family", role: "Cine Actress" },
-  { quote: "My daughter enjoys her studies more than she ever did at school. Individualized tutoring really works.", name: "Gayathri Arun", role: "Parent of Kalyani" },
-  { quote: "Interval adjusts to my daughter's learning style and weak areas. Visible changes in her confidence!", name: "Gayathri Vishal", role: "Parent of Vridhi Vishal" },
-  { quote: "Time flexibility and quality education — we get exactly what we want for our child.", name: "Fathima & Usman", role: "Parents of Shanza" },
-  { quote: "An amazing initiative for the little ones. Very happy enrolling my child since she was 3.", name: "Shilpa Bala", role: "Cine Actress" },
-  { quote: "Math became so much easier. Teachers explain clearly and lessons stay fun and interactive.", name: "Nadi Muhammad KP", role: "Student" },
+  {
+    quote: "I can see improvement in my child’s reading and writing. Teachers give good attention.",
+    name: "Bushra",
+    role: "Parent of Aadil (4th Std)",
+    img: scientistImg,
+  },
+  {
+    quote: "The crash course was very helpful. My child prepared better for exams.",
+    name: "Thahira",
+    role: "Parent of Thashreef (8th Std)",
+    img: scientistImg,
+  },
+  {
+    quote: "My child was weak earlier, but now there is clear improvement. Good teaching support.",
+    name: "Saleem & Muhsina",
+    role: "Parent of Adhira (10th)",
+    img: scientistImg,
+  },
+  {
+    quote: "English class helped improve communication skills. Good environment.",
+    name: "Jyothi & Suresh",
+    role: "Parent of Ayush (8th Std)",
+    img: scientistImg,
+  },
+  {
+    quote: "Teachers are supportive and focus on basics.",
+    name: "Bashith ",
+    role: "Parent of Ayisha Bareera",
+    img: scientistImg,
+  },
+
 ];
 
 export function Testimonials() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % data.length);
+    }, 3000); // change every 3 sec
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="testimonials" className="bg-gradient-hero">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider">Testimonials</p>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">What the Parents Have To Say</h2>
-          <p className="mt-3 text-muted-foreground">
-            We take pride in hearing from families who have experienced the positive impact of our program.
+    <section className="py-20 bg-gradient-hero overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-center">
+
+        {/* LEFT SIDE */}
+        <div>
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+            Testimonials
+          </p>
+
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold leading-tight">
+            What the Parents <br /> Have To Say
+          </h2>
+
+          <p className="mt-4 text-muted-foreground max-w-md">
+            At the heart of every child's growth is the support and trust of their parents.
+            We take immense pride in hearing from families who have experienced the positive impact of our program.
           </p>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.map((t) => (
-            <article key={t.name} className="rounded-2xl bg-card p-7 shadow-card border relative">
-              <Quote className="absolute top-5 right-5 h-8 w-8 text-primary/15" />
-              <p className="text-sm leading-relaxed text-foreground/85">"{t.quote}"</p>
-              <div className="mt-6 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center text-white font-bold">
-                  {t.name[0]}
+
+        {/* RIGHT SIDE CAROUSEL */}
+        <div className="relative flex justify-center items-center">
+
+          <div className="flex gap-6 items-center transition-all duration-500">
+
+            {data.map((item, i) => {
+              // calculate position relative to active index
+              const position =
+                (i - index + data.length) % data.length;
+
+              const isCenter = position === 0;
+              const isLeft = position === data.length - 1;
+              const isRight = position === 1;
+
+              if (!isCenter && !isLeft && !isRight) return null;
+
+              return (
+                <div
+                  key={i}
+                  className={`transition-all duration-500 rounded-2xl bg-white shadow-xl p-4
+                    ${isCenter ? "w-[320px] scale-105 z-20" : "w-[260px] scale-90 opacity-40"}
+                  `}
+                >
+                  {/* Image */}
+                  <img
+                    src={item.img}
+                    className="w-full h-[180px] object-cover rounded-xl"
+                  />
+
+                  {/* Content */}
+                  <div className="mt-4">
+                    <Quote className="h-5 w-5 text-primary mb-2" />
+
+                    <p className="text-sm text-gray-700 line-clamp-4">
+                      {item.quote}
+                    </p>
+
+                    <div className="mt-4">
+                      <p className="font-semibold">{item.name}</p>
+                      <p className="text-xs text-gray-500">
+                        {item.role}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </div>
-            </article>
-          ))}
+              );
+            })}
+
+          </div>
+
         </div>
       </div>
     </section>

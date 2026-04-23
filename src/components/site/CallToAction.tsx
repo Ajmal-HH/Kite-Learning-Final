@@ -13,10 +13,10 @@ export function CallToAction() {
           Passionate tutors, a nurturing environment, and lessons aligned with your child's unique needs.
         </p>
         <div className="relative mt-8 flex flex-wrap gap-4 justify-center">
-          <a href="tel:919061000827" className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-6 py-3 text-sm font-semibold hover:bg-white/90 transition">
+          <a href="tel:918660129593" className="inline-flex items-center gap-2 rounded-full bg-white text-primary px-6 py-3 text-sm font-semibold hover:bg-white/90 transition">
             <Phone className="h-4 w-4" /> Talk To Our Experts
           </a>
-          <a href="https://wa.me/919061000827" className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-sm font-semibold hover:bg-white/20 transition">
+          <a href="https://wa.me/917349079630" className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-sm font-semibold hover:bg-white/20 transition">
             <MessageCircle className="h-4 w-4" /> Message us on WhatsApp
           </a>
         </div>

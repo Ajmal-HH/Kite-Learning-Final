@@ -10,8 +10,8 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { Programs } from "@/components/site/Programs";
 import { Personalized } from "@/components/site/Personalized";
 import { Faq } from "@/components/site/Faq";
-import { News } from "@/components/site/News";
 import { CallToAction } from "@/components/site/CallToAction";
+import { FloatingButtons } from "@/components/site/WhatsappButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,8 +39,8 @@ function Index() {
         <Programs />
         <Personalized />
         <Faq />
-        <News />
         <CallToAction />
+        <FloatingButtons  />
       </main>
       <Footer />
     </div>

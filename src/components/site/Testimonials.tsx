@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { Quote } from "lucide-react";
 import scientistImg from "@/assets/scientist.png";
+import rev1 from "@/assets/rev1.jpeg";
+import rev2 from "@/assets/rev2.jpeg";
+import rev3 from "@/assets/rev3.jpeg";
+import rev4 from "@/assets/rev4.jpeg";
+import rev5 from "@/assets/rev5.jpeg";
+
 
 
 const data = [
@@ -8,31 +14,31 @@ const data = [
     quote: "I can see improvement in my child’s reading and writing. Teachers give good attention.",
     name: "Bushra",
     role: "Parent of Aadil (4th Std)",
-    img: scientistImg,
+    img: rev1,
   },
   {
     quote: "The crash course was very helpful. My child prepared better for exams.",
     name: "Thahira",
     role: "Parent of Thashreef (8th Std)",
-    img: scientistImg,
+    img: rev2,
   },
   {
     quote: "My child was weak earlier, but now there is clear improvement. Good teaching support.",
     name: "Saleem & Muhsina",
     role: "Parent of Adhira (10th)",
-    img: scientistImg,
+    img: rev3,
   },
   {
     quote: "English class helped improve communication skills. Good environment.",
     name: "Jyothi & Suresh",
     role: "Parent of Ayush (8th Std)",
-    img: scientistImg,
+    img: rev4,
   },
   {
     quote: "Teachers are supportive and focus on basics.",
     name: "Bashith ",
     role: "Parent of Ayisha Bareera",
-    img: scientistImg,
+    img: rev5,
   },
 
 ];
@@ -49,7 +55,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-hero overflow-hidden">
+    <section id="testimonials" className="py-20 bg-gradient-hero overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE */}

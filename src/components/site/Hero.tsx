@@ -31,7 +31,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="bg-gradient-hero relative overflow-hidden">
+    <section id="hero" className="bg-gradient-hero relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.05] tracking-tight">

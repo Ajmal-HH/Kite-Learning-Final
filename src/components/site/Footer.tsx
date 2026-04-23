@@ -86,12 +86,12 @@ export function Footer() {
             {/* 📍 Google Maps link */}
             <li>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Napoklu,Karnataka"
+                href="https://maps.apple.com/?ll=12.310747,75.690003&q=Kodagu%20-%20Madikeri&t=m"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-white"
               >
-                <MapPin className="h-4 w-4" /> Napoklu, Karnataka
+                <MapPin className="h-4 w-4" /> Napoklu, Hodavada,  Near Police station , Karnataka 571214
               </a>
             </li>
 

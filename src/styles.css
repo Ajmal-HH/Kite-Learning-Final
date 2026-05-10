@@ -50,7 +50,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 260);
 
-  /* Brand: Interval blue + purple gradient */
+  /* Brand: kite blue + purple gradient */
   --brand: oklch(0.55 0.2 260);            /* deep blue */
   --brand-foreground: oklch(0.99 0 0);
   --brand-purple: oklch(0.55 0.23 305);    /* magenta-purple */

@@ -16,9 +16,9 @@ import { FloatingButtons } from "@/components/site/WhatsappButton";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Interval Learning — Personalized Online Tutoring for Kids K-12" },
+      { title: "Kite Learning — Personalized Online Tutoring for Kids K-12" },
       { name: "description", content: "India's personalized online learning platform. One-on-one tuition, language courses, Montessori training and more for K-12 students worldwide." },
-      { property: "og:title", content: "Interval Learning — Personalized Online Tutoring" },
+      { property: "og:title", content: "Kite Learning — Personalized Online Tutoring" },
       { property: "og:description", content: "Helping your child become a future doctor, engineer or whatever they dream of — with personalized 1:1 online classes." },
     ],
   }),

@@ -12,6 +12,7 @@ import { Personalized } from "@/components/site/Personalized";
 import { Faq } from "@/components/site/Faq";
 import { CallToAction } from "@/components/site/CallToAction";
 import { FloatingButtons } from "@/components/site/WhatsappButton";
+import logo from "@/assets/kite-logo-with bg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,6 +21,12 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "India's personalized online learning platform. One-on-one tuition, language courses, Montessori training and more for K-12 students worldwide." },
       { property: "og:title", content: "Kite Learning — Personalized Online Tutoring" },
       { property: "og:description", content: "Helping your child become a future doctor, engineer or whatever they dream of — with personalized 1:1 online classes." },
+    ],
+   links: [
+      {
+        rel: "icon",
+        href: logo,
+      },
     ],
   }),
   component: Index,

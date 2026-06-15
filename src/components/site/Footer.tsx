@@ -46,8 +46,8 @@ export function Footer() {
           <h4 className="text-white font-semibold mb-4">Programs</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/courses">Academic Courses</Link></li>
-            <li><Link to="/non-academics">Non-Academic</Link></li>
-            <li><Link to="/online-tuition">Online Tuition</Link></li>
+            <li><Link to="/courses">Non-Academic</Link></li>
+            <li><Link to="/courses">Online Tuition</Link></li>
             <li><Link to="/courses">Language Courses</Link></li>
           </ul>
         </div>
@@ -56,8 +56,8 @@ export function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/become-a-tutor">Become a Tutor</Link></li>
-            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/courses">Become a Tutor</Link></li>
+            <li><Link to="/courses">Careers</Link></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
